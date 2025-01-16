@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include ("templates/head.ejs", {titulo: 'Citas', css: '/css/schedule.css'}) %>
+    <link rel="stylesheet" href="css/evo-calendar.min.css" />
+    <link rel="stylesheet" href="css/evo-calendar.midnight-blue.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<body>
+    <!-- Pop-up para agregar ficha -->
+    <dialog id="mensaje">
+        <!-- Contenido del pop-up -->
+        <div id="popup-content">
+            <div class="contenedor">
+                <div class="ingreso-container">
+                    <h2>Reprogramar</h2>
+                    <form class="ingreso-form" action="/reprogramarFecha/<% %>" method="post">
+                        <div class="fecha">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                        
+                        <div class="fecha">
+                            <label for="hora-inicio">Hora de inicio:</label>
+                            <input type="time" id="hora-inicio" name="hora_inicio" required>
+                        </div>
+                        
+                        <div class="fecha">
+                            <label for="hora-fin">Hora de fin:</label>
+                            <input type="time" id="hora-fin" name="hora_fin" required>
+                        </div>
+                         <button id="btnIngresar" type="button" onclick="enviarForm()" >Guardar</button>
+                    </form>
+                </div>
+            </div>
+            <button id="cerrar-popup">Cerrar</button>
+        </div>
+    </dialog>
+
+   
+    <%- include ("templates/admin.header.ejs") %>;
+    <div class="content-container">
+        <h1 class="titulo">Citas programadas</h1>
+        <div id="calendar"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="js/evo-calendar.min.js"></script>
+    <script
+		src="https://kit.fontawesome.com/81581fb069.js"
+		crossorigin="anonymous"
+	></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/schedule.js"> </script>
+    
+  </body>
+</html>

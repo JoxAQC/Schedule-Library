@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include ("templates/head.ejs", {titulo: 'Historial Médico', css: '/css/tablist.css'}) %>
+</head>
+<body>
+    <%- include ("templates/admin.header.ejs") %>;
+    <div class="content-container">
+        <h1 class="titulo">Horarios de atención</h1>
+        <table class="customer-tabla">
+            <thead>
+                <tr>
+                    <th class="tabla-header">N°</th>
+                    <th class="tabla-header">Día de la Semana</th>
+                    <th class="tabla-header">Hora de Inicio</th>
+                    <th class="tabla-header">Hora de Fin</th>
+                    <th class="tabla-header">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% num = 1; %>
+                <% horarios.forEach(function(horario) { %>
+                    <tr id="horario-<%= horario.id %>" class="tabla-row">
+                        <td class="tabla-cell"><%= num %></td>
+                        <td class="tabla-cell"><%= horario.dia %></td>
+                        <td class="tabla-cell">
+                            <input type="time" class="hora-inicio" value="<%= horario.inicio %>" disabled>
+                        </td>
+                        <td class="tabla-cell">
+                            <input type="time" class="hora-fin" value="<%= horario.fin %>" disabled>
+                        </td>
+                        <td class="tabla-cell">
+                            <button class="editar-btn" onclick="editarHorario('<%= horario.id %>')">Editar</button>
+                        </td>
+                    </tr>
+                    <% num = num + 1; %>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<!-- custom js file link  -->
+		<script src="/js/tablist.js"></script>
+        <script src="/js/details-tablist.js"></script>
+  </body>
+</html>

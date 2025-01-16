@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 60%;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	height: 100vh;
+}
+
+header {
+	height: 20%;
+}
+
+/*Body*/
+.principal {
+    max-height: 150%;
+}
+
+.volver {
+    text-align: left;
+    font-size: 20px;
+    text-decoration: none;
+    color: #055492;
+    font-weight: 500;
+}
+
+.cont-volver{
+    margin-left: 50px;
+    margin-top: 15px;
+}
+.contenedor {
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.datosUser {
+    background-color: rgb(172, 207, 235);
+    margin: 0 20px;
+    height: 90%;
+    width: 30%;
+    font-size: 18px;
+    padding: 15px 10px;
+    border: 5px solid #055492;
+}
+
+.datosUser h2 {
+    text-align: center;
+    color: #055492;
+}
+
+.datos-form .datoP{
+    width: 100%;
+    margin: 9px 0;
+}
+
+.datoP label {
+    width: 100%;
+}
+
+.datoTable td{
+    padding: 0 10px;
+}
+
+.photoUser {
+    height: 90%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #055492;
+    background-color: rgb(172, 207, 235);
+}
+
+.photoUser img {
+    height: 20rem;
+    cursor: pointer;
+}
+
+.mascotaRegistrada {
+    font-size: 18px;
+    padding-left: 50px;
+    margin-top: 30px;
+}
+
+.mascotaRegistrada h2 {
+    color: #055492;
+}
+
+.m {
+    /*background-color: yellow;*/
+    display: flex;
+    justify-content: start;
+}
+
+.contenedor .mascotaDatos {
+    background-color: #6CD1E1;
+    margin: 0 40px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    min-width: 250px;
+    min-height: 250px;
+    /* display: none; */
+}
+
+.mascotaDatos img {
+    height: 18rem;
+}
+
+.mascotaDatos .dato {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    text-align: center;
+}
+
+.anadirMascota {
+    background-color: #6CD1E1;
+    margin: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    min-width: 250px;
+    height: 250px;
+    margin-left: 50px;
+}
+
+.anadirMascota img {
+    height: 10rem;
+}
+
+.anadirMascota .dato {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    text-align: center;
+}
+
+/*Query*/
+@media (max-width: 766px) {
+    .datosUser {
+        margin: 0 20px;
+        height: 90%;
+        width: 60%;
+        font-size: 15px;
+    }
+
+    .photoUser {
+        height: 90%;
+        width: 30%;
+    }
+
+    .photoUser img {
+        height: 15rem;
+    }
+
+    .mascotaRegistrada {
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+
+    .m{
+        height: 50%;
+        flex-direction: column;
+        width: 100%;
+    }
+/*
+    .add{
+        height: 15%;
+        width: 100%;
+        margin-left: 0;
+    }*/
+
+    .contenedor .mascotaDatos {
+        flex-direction: row;
+        margin: 10px 0;
+        border-radius: 10px;
+        height: 100px;
+    }
+
+    .mascotaDatos img {
+        height: 9rem;
+    }
+
+    .mascotaDatos .dato {
+        /*background-color: blue;*/
+        font-size: 20px;
+        text-align: center;
+        width: 150px;
+        margin: auto;
+    }
+	
+    .contenedor .anadirMascota {
+        flex-direction: row;
+        margin: 10px 0;
+        border-radius: 10px;
+        height: 100px;
+    }
+
+    .anadirMascota img {
+        height: 9rem;
+    }
+
+    .anadirMascota .dato {
+        /*background-color: blue;*/
+        font-size: 20px;
+        text-align: center;
+        width: 150px;
+        margin: auto;
+    }
+    .mascotaDatos .dato {
+        font-size: 16px; 
+        text-align: center;
+        width: 150px;
+        margin: auto;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .anadirMascota .dato {
+        font-size: 16px; 
+        text-align: center;
+        width: 150px;
+        margin: auto;
+        overflow: hidden;
+        white-space: nowrap; 
+        text-overflow: ellipsis;
+    }
+
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>VetSalud</title>
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/head.css" />
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <link rel="icon" href="/images/logo.svg" type="image/x-icon">
+	</head>
+	<body>
+		<header>
+			<div class="container-navbar">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/images/logo.svg" alt="">
+                        <p>VetSalud</p>
+                    </a>
+
+                </div>
+				<i class="fa-solid fa-bars" id="menu-abrir"></i>
+				<nav class="navbar container" id="nav">
+					<i class="fa-solid fa-bars" id="menu-cerrar"></i>
+					<ul class="menu">
+						<li><a href="#">Inicio</a></li>
+						<li><a href="#">Conócenos</a></li>
+                        <li><a href="/login">Agendar una cita</a></li>
+						<li><a href="#">Contacto</a></li>
+                        <li><a href="login" id="iniciar">Iniciar Sesión</a></li>
+                        <li><a href="signUp" id="registro">Registrarse</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<section class="banner">
+			<div class="content-banner">
+				<h1 style="color: #0097CD;">Veterinaria</h1>
+                <h1>VetSalud</h1>
+                <p>Amamos a tus mascotas tanto como tú, confía en nosotros para su salud</p>
+				<a href="#">Saber más</a>
+			</div>
+			<img src="/images/indexback.svg" alt="">
+		</section>
+
+		<main class="main-content">
+
+			<section class="container top-categories">
+				<h1 class="heading-1">Cuéntanos, ¿qué estás buscando?</h1>
+				<div class="container-categories">
+					<a href="signUp" class="button-buscar">					
+						<div class="card-category category-usuario">
+							<p href="signUp">Crear una cuenta</p>
+						</div>
+					</a>
+
+					<a class="button-buscar">
+						<div class="card-category category-cita">
+							<p>Agendar una cita</p>
+						</div>
+					</a>
+
+					<a class="button-buscar">
+						<div class="card-category category-sede">
+							<p>Ubicar sedes	<br> y clínicas</p>
+						</div>
+					</a>
+
+					<a class="button-buscar">
+						<div class="card-category category-bonus">
+							<p>Ver beneficios</p>
+						</div>
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<script>
+                        
+			const nav = document.querySelector("#nav");
+			const abrir = document.querySelector("#menu-abrir");
+			const cerrar = document.querySelector("#menu-cerrar");
+		
+			abrir.addEventListener("click", () => {
+			  nav.classList.add("visible");
+			  nav.classList.toggle("action");
+			});
+
+			cerrar.addEventListener("click", () => {
+			  nav.classList.remove("visible");
+			})
+		</script>
+
+		<footer class="footer">
+			<div class="container container-footer">
+				<div class="menu-footer">
+					<div class="contact-info">
+						<button class="button-footer">
+							<p class="title-footer">Libro de reclamaciones</p>
+						</button>
+						<div class="social-icons">
+							<span class="facebook">
+								<i class="fa-brands fa-facebook-f"></i>
+							</span>
+							<span class="twitter">
+								<i class="fa-brands fa-twitter"></i>
+							</span>
+							<span class="youtube">
+								<i class="fa-brands fa-youtube"></i>
+							</span>
+							<span class="pinterest">
+								<i class="fa-brands fa-pinterest-p"></i>
+							</span>
+							<span class="instagram">
+								<i class="fa-brands fa-instagram"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="information">
+						<button  class="button-footer">
+							<p class="title-footer">Conócenos</p>
+						</button>
+					</div>
+
+					<div class="my-account">
+						<button  class="button-footer">
+							<p class="title-footer">Transparencia</p>
+						</button>
+					</div>
+
+					<div class="newsletter">
+						<p class="title-footer">Estamos para ayudarte</p>
+
+						<div class="content">
+							<p>
+								Horario de atención: 8am-8pm
+							</p>
+							<br>
+							<button>Contáctanos</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+		<!-- custom js file link  -->
+		<script src="js/script.js"></script>
+	</body>
+</html>

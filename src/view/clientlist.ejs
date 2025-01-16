@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include ("templates/head.ejs", {titulo: 'Clientes', css: '/css/clientlist.css'}) %>
+	<body>
+		<%- include ("templates/admin.header.ejs") %>;
+    <div class="content-container">
+        <h1 class="titulo">Lista de Clientes</h1>
+        <div class="search-bar">
+            <input type="text" id="busqueda" class="search-input" placeholder="Buscar cliente...">
+            <button id="buscar" onclick="buscar">
+                <i class="fas fa-search"></i> <!-- Ícono de búsqueda -->
+            </button>
+        </div>
+        <table class="customer-tabla" id="tablaUsuarios">
+            <thead>
+                    <th class="tabla-header">N°</th>
+                    <th class="tabla-header">Nombre</th>
+                    <th class="tabla-header">DNI</th>
+                    <th class="tabla-header">Número</th>
+                    <th class="tabla-header">Acción</th>
+            </thead>
+            <tbody>
+                <% num = 1;%>
+                <% usuario.forEach(function(usuario) { %>
+                    <tr class="tabla-row">
+                        <td class="tabla-cell"><%= num %></td>
+                        <td class="tabla-cell"><%= usuario['Nombre Completo'] %></td>
+                        <td class="tabla-cell"><%= usuario.DNI %></td>
+                        <td class="tabla-cell"><%= usuario['Numero celular'] %></td>
+                        <td class="tabla-cell"> <a href="clientes/info/<%= usuario.DNI %>"><b>Ver más</b></a></td>
+                    </tr>
+                    <% num++;}); %>
+            </tbody>
+        </table>
+    </div>
+
+    <script
+		src="https://kit.fontawesome.com/81581fb069.js"
+		crossorigin="anonymous"
+	></script>
+
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<script src="/js/clientlist.js"></script>
+  </body>
+</html>

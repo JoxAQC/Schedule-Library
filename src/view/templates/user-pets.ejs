@@ -1,0 +1,92 @@
+<section class="principal">
+    <div class="contenedor">
+        <div class="photoUser">
+            <img id="fotoPerfil" src="/images/user.svg" alt="FotoUsuario">
+            <input type="file" id="photo" name="photo" required style="display: none;">
+        </div>
+        <div class="datosUser">
+            <h2>Datos Personales</h2>
+            <form class="datos-form" action="#" method="post">
+                <table class="datoTable">
+                    <tr>
+                        <td><strong>Nombres:</strong></td>
+                        <td><span id="nombre"><%= usuario.NOMBRES_USUARIO %></span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Apellidos:</strong></td>
+                        <td><span id="apellido"><%= usuario.APELLIDOS_USUARIO %></span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dirección:</strong></td>
+                        <td><span id="direccion"><%= usuario.DIRECCION_USUARIO %></span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>DNI:</strong></td>
+                        <td><span id="dni"><%= usuario.DNI_USUARIO %></span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Celular:</strong></td>
+                        <td><span id="celular"><%= usuario.CELULAR_USUARIO %></span></td>
+                    </tr>
+                </table>
+            </form>
+        </div>            
+
+                <script>
+                    const icono = document.getElementById("fotoPerfil");
+                    const inputFoto = document.getElementById("photo");
+                                    
+                    icono.addEventListener("click", function () {
+                        inputFoto.click();
+                    });
+                </script>
+                <script>
+                    
+                    const nav = document.querySelector("#nav");
+                    const abrir = document.querySelector("#menu-abrir");
+                    const cerrar = document.querySelector("#menu-cerrar");
+                
+                    abrir.addEventListener("click", () => {
+                      nav.classList.add("visible");
+                      nav.classList.toggle("action");
+                    });
+
+                    cerrar.addEventListener("click", () => {
+                      nav.classList.remove("visible");
+                    })
+                </script>
+            </form>
+        </div>
+    </div>
+
+    <div class="mascotaRegistrada">
+    <h2>Mascotas Registradas</h2>
+    </div>
+    
+    <div class="contenedor m" id="contenedorMascotas">
+        <% if (userType === 'user') { %>
+        <div class="anadirMascota">
+            <a href="/registroMascota">
+                <img id="addMascota" src="/images/square-rounded-plus.svg" alt="addMascota">
+            </a>
+            <div class="dato">
+                <label for="anadir"><strong></strong><span id="anadir">Añadir</span></label>
+            </div>
+        </div>
+        <% } %>
+
+        <% mascotas.forEach(function(mascota, index) { %>
+            <div class="mascotaDatos M<%= index + 1 %>">
+                <img id="fotoPerfil" src="data:image/jpeg;base64,<%= mascota.IMAGEN_MASCOTA.toString('base64') %>" alt="PhotoMascota">
+              <div class="dato">
+                <label for="nombre"><strong id="nombre"><%= mascota.NOMBRE_MASCOTA %></strong></label>
+                <span> <label for="especie"><span id="especie"><%= mascota.ESPECIE_MASCOTA %></span> | </label>
+                <%= mascota.SEXO_MASCOTA = (mascota.SEXO_MASCOTA === 'M') ? 'Macho' : 'Hembra';%>
+                <label for="sexo"><span id="sexo"> </span></label></span>
+                <label for="fechanacimiento"><span id="fechanacimiento"><%= formatoFecha(mascota.FECHA_NACIMIENTO_MASCOTA) %></span></label>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+    </div>
+</section>

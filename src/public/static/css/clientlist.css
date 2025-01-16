@@ -1,0 +1,171 @@
+/* Estilos para el contenedor de la tabla y otros elementos */
+
+.content-contenedor {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 10%; /* Agregamos margen izquierdo del 10% */
+    margin-right: 10%; /* Agregamos margen derecho del 10% */
+}
+
+.titulo {
+    font-size: 30px;
+    margin-left: 10%;
+    color: #055492;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    margin-right: 10%;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    width: 250px; /* Ajusta el ancho de la barra de búsqueda según tus necesidades */
+    padding: 10px;
+}
+
+#buscar {
+    background-color: #055492;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#buscar i {
+    font-size: 18px;
+}
+
+.highlight {
+    background-color: #d5f5fa; /* Color de resaltado */
+    font-weight: bold; /* Otras propiedades de estilo, como negrita */
+}
+
+.customer-tabla {
+    background-color: white; /* Fondo blanco */
+    color: #333; /* Texto gris oscuro */
+    width: 90%; /* Ancho del 90% */
+    margin: 0 5%; /* Margen izquierdo y derecho del 5% */
+}
+
+.tabla-header {
+    background-color: #055492; /* Fondo del encabezado en azul (#055492) */
+    color: white; /* Texto blanco en el encabezado */
+    font-weight: bold; /* Negrita en el encabezado, si es necesario */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+.tabla-cell {
+    padding: 18px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.tabla-cell a{
+	color:#055492;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.tabla-cell a:hover{	
+	color:#087fda;
+}
+
+.tabla-row:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.tabla-row:hover {
+    background-color: #e0e0e0;
+}
+
+/*Media Querys*/
+
+@media (max-width: 766px) {
+	html {
+		font-size: 55%;
+	}
+	
+	.navbar {
+		padding: 1rem 2rem;
+	}
+	
+	#menu-abrir {
+		display: block;
+		color: #fff;
+		font-size: 3rem;
+		cursor: pointer;
+		transition: opacity 0.3s, visibility 0.3s;
+	}
+	
+	.navbar {
+		display: flex;
+		position: absolute;
+		flex-direction: column;
+		align-items: end;
+		top: 0;
+		right: 0;
+		gap: 1rem;
+		background-color: #055492;
+		padding: 5rem;
+		box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+		height: 100vh;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s, visibility 0.3s;
+	}
+
+	.navbar.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.menu {
+		flex-direction: column;
+		align-items: start;
+	}
+
+	#menu-cerrar {
+		display: block;
+		color: #fff;
+		font-size: 3rem;
+		cursor: pointer;
+		transition: opacity 0.3s, visibility 0.3s;
+	}
+
+	.menu a img {
+		width: 45px;
+	}
+
+	.menu #menu-cerrar {
+		display: block;
+	}
+
+	.ingreso-container {
+		padding: 10px;
+	}
+
+	.ingreso-form input {
+		height: 30px;
+		font-size: 13px;
+	}
+
+	.ingreso-form .fecha {
+		font-size: 12px;
+	}
+
+	.fecha input {
+		height: 30px;
+	}
+
+	#btnIngresar {
+		font-size: 17px;
+	}
+  
+}

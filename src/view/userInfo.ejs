@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include ("templates/head.ejs", {titulo: 'Detalle de usuario', css: '/css/perfilUser.css'}) %>
+	<body>
+		<%- include ("templates/admin.header.ejs") %>
+        <div class="cont-volver volver">
+            <i class="fa-solid fa-chevron-left volver"></i>
+            <a href="/clientes" class="volver">Regresar</a>
+        </div>
+        <%- include ("templates/user-pets.ejs") %>
+    <script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+        <script src="js/perfilUser.js"></script>
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  </body>
+</html>

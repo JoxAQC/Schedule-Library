@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/logo.svg" type="image/x-icon">
+    <title>Página no encontrada</title>
+    <style>
+        :root{
+            --primary-color: #055492;
+        }
+
+        body, html{
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap:10px;
+            align-items: center;
+            justify-content: center;
+        }
+        .container img{
+            width: 30%;
+        }
+        h1{
+          color: var(--primary-color);  
+        }
+
+        .container p{
+            font-size: 20px;
+        }
+        .container p a{
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/images/error-404.svg" alt="Page not found">
+        <h1>Oops! La página que busca, no está disponible</h1>
+        <p> Volver al <a href="/">Menú principal</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include ("templates/head.ejs", {titulo: 'Registrar cita', css: '/css/registroMascota.css'}) %>
+	<body>
+		<%- include ("templates/admin.header.ejs") %>;
+    <section class="ventana">
+        <div class="contenedor">
+            <div class="ingreso-container">
+                <h2>Agendar una cita</h2>
+                <form class="ingreso-form" action="#" method="post">
+                    <div class="nombre">
+                        <input type="text" id="motivo" name="motivo" placeholder="Motivo" required>
+                    </div>
+                    <div class="nombre">
+                        <textarea id="descripcion" name="descripcion" placeholder="Descripción" required></textarea>
+                    </div>
+
+                    <div class="fecha">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    
+                    <div class="opcion">
+                        <label for="agendar-varios">
+                            <input type="checkbox" id="agendar-varios" name="agendar_varios">
+                            Agendar varios
+                        </label>
+                    </div>
+                    
+                    <div class="intervalo" style="display: none;">
+                        <label for="intervalo-minutos">Intervalo (minutos):</label>
+                        <input type="number" id="intervalo" name="intervalo" min="1" placeholder="Ejemplo: 30">
+                    </div>
+                    
+                    <div class="fecha">
+                        <label for="hora-inicio">Hora de inicio:</label>
+                        <input type="time" id="hora-inicio" name="hora_inicio" required>
+                    </div>
+                    
+                    <div class="fecha">
+                        <label for="hora-fin">Hora de fin:</label>
+                        <input type="time" id="hora-fin" name="hora_fin" required>
+                    </div>
+
+                    <button id="btnIngresar" type="submit" >Agendar cita</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+		<!-- custom js file link  -->
+		<script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const agendarVariosCheckbox = document.getElementById("agendar-varios");
+            const intervaloInput = document.getElementById("intervalo");
+
+            // Listener para alternar entre modos
+            agendarVariosCheckbox.addEventListener("change", function () {
+                if (agendarVariosCheckbox.checked) {
+                intervaloInput.parentElement.style.display = "block"; // Mostrar el campo de intervalo
+                } else {
+                intervaloInput.parentElement.style.display = "none"; // Ocultar el campo de intervalo
+                }
+            });
+});
+        </script>
+  </body>
+</html>
